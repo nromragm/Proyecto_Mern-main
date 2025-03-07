@@ -4,8 +4,6 @@ import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = "https://proyecto-mern-main-1.onrender.com/api/usuarios"; // URL de tu backend en Render
-
 const CrearUsuario = () => {
   const valorInicial = {
     nombre: '',
@@ -56,7 +54,7 @@ const CrearUsuario = () => {
 
     try {
       // Enviar datos al backend
-      await axios.post(API_URL, formData, {
+      await axios.post('http://localhost:4000/api/usuarios', formData, {
         headers: {
           'Content-Type': 'multipart/form-data' // Especificar el tipo de contenido
         }
@@ -93,7 +91,7 @@ const CrearUsuario = () => {
 
     try {
       // Enviar datos al backend
-      await axios.put(`https://proyecto-mern-main-1.onrender.com/api/usuarios/${subId}`, formData, {
+      await axios.put(`http://localhost:4000/api/usuarios/${subId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data' // Especificar el tipo de contenido
         }
@@ -112,7 +110,7 @@ const CrearUsuario = () => {
 
   const obtUno = async (id) => { // Función para obtener un usuario y mostrar la información en el formulario
     try {
-      const res = await axios.get(`https://proyecto-mern-main-1.onrender.com/api/usuarios/${id}`);
+      const res = await axios.get(`http://localhost:4000/api/usuarios/${id}`);
       setUsuario({
         nombre: res.data.nombre,
         apellido: res.data.apellido,
