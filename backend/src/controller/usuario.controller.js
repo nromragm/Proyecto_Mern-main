@@ -2,7 +2,7 @@ const usuarioCtrl = {};
 const Usuario = require('../models/usuario');
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // Listar usuarios
