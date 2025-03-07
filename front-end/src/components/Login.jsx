@@ -13,7 +13,7 @@ const Login = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:4000/api/auth/login', { correo, password });
+      const response = await axios.post('https://proyecto-mern-main-1.onrender.com/api/auth/login', { correo, password });
 
       if (response.data.token) {
         login(response.data.token);
